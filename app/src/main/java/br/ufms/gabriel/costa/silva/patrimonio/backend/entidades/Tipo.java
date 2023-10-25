@@ -1,5 +1,6 @@
 package br.ufms.gabriel.costa.silva.patrimonio.backend.entidades;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -40,5 +41,14 @@ public class Tipo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("Tipo ").append(tipo).append("\n")
+                .append("Descrição ").append(descricao)
+                .toString();
     }
 }

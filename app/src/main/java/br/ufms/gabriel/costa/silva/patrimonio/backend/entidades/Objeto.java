@@ -53,4 +53,13 @@ public class Objeto {
     public void setNumPatrimonio(int numPatrimonio) {
         this.numPatrimonio = numPatrimonio;
     }
+
+    @Override
+    public String toString() {
+        return
+                "Número de patrimônio " + numPatrimonio + "\n" +
+                "Tipo " + tipoId +"\n" +
+                "Data De Registro " + dataDeRegistro +"\n" +
+                "Nome do Funcionario " + nomeFuncionario;
+    }
 }

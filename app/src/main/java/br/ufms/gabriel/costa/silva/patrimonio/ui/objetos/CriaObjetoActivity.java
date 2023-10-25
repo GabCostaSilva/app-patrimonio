@@ -84,7 +84,7 @@ public class CriaObjetoActivity extends AppCompatActivity implements ObjetosCont
 
     private void getObjeto() {
         objeto = objetoDao.getObjeto(numPatrimonio);
-        editTipo.setText(objeto.getTipoId());
+        editTipo.setText(String.valueOf(objeto.getTipoId()));
         editNomeFuncionario.setText(objeto.getNomeFuncionario());
     }
 }
