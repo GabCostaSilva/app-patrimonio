@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="br.ufms.gabriel.costa.silva.patrimonio.ui.dashboard.DashboardFragment"
+        android:name="br.ufms.gabriel.costa.silva.patrimonio.ui.objetos.ObjetoFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_objeto" />
 
     <fragment
         android:id="@+id/navigation_notifications"

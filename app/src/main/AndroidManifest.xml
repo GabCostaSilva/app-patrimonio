@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.objetos.CriaObjetoActivity"
+            android:exported="true"
+            android:label="Novo Objeto">
+        </activity>
     </application>
 
 </manifest>

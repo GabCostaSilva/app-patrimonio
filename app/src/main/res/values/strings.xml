@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Patrimonio</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Objetos</string>
+    <string name="title_notifications">Tipos</string>
+    <string name="novo">Novo</string>
+    <string name="tipo">Tipo de objeto</string>
+    <string name="nomeFuncionario">Nome do funcionario</string>
+    <string name="voltar">Voltar</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
 </resources>

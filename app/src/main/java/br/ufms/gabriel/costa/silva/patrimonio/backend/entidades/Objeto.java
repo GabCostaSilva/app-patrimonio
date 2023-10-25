@@ -1,5 +1,6 @@
 package br.ufms.gabriel.costa.silva.patrimonio.backend.entidades;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -11,13 +12,13 @@ public class Objeto {
 
     private int tipoId;
 
+    @ColumnInfo(defaultValue = "CURRENT_TIMESTAMP")
     private String dataDeRegistro;
 
     private String nomeFuncionario;
 
-    public Objeto(int tipoId, String dataDeRegistro, String nomeFuncionario) {
+    public Objeto(int tipoId, String nomeFuncionario) {
         this.tipoId = tipoId;
-        this.dataDeRegistro = dataDeRegistro;
         this.nomeFuncionario = nomeFuncionario;
     }
 
@@ -43,5 +44,13 @@ public class Objeto {
 
     public void setNomeFuncionario(String nomeFuncionario) {
         this.nomeFuncionario = nomeFuncionario;
+    }
+
+    public int getNumPatrimonio() {
+        return numPatrimonio;
+    }
+
+    public void setNumPatrimonio(int numPatrimonio) {
+        this.numPatrimonio = numPatrimonio;
     }
 }

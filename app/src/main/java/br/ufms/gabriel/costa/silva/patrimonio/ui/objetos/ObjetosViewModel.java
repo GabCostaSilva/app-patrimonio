@@ -1,16 +1,16 @@
-package br.ufms.gabriel.costa.silva.patrimonio.ui.dashboard;
+package br.ufms.gabriel.costa.silva.patrimonio.ui.objetos;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class ObjetosViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public ObjetosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("Objetos do Patrimponio");
     }
 
     public LiveData<String> getText() {

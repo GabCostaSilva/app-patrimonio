@@ -1,5 +1,6 @@
 package br.ufms.gabriel.costa.silva.patrimonio.backend.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.Objeto;
 
+@Dao
 public interface ObjetoDao {
 
     @Query("SELECT * FROM Objeto WHERE numPatrimonio = :numPatrimonio LIMIT 1")
