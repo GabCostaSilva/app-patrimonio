@@ -9,4 +9,6 @@
     <string name="voltar">Voltar</string>
     <string name="excluir">Excluir</string>
     <string name="salvar">Salvar</string>
+    <string name="descricaoTipo">Descrição do tipo</string>
+    <string name="tipoTipo">Tipo</string>
 </resources>

@@ -4,9 +4,7 @@ import android.view.View;
 
 public interface ObjetosControler {
 
-    void excluirObjeto(View view);
+    void excluir(View view);
 
-    void salvarObjeto(View view);
-
-    void voltar(View view);
+    void salvar(View view);
 }

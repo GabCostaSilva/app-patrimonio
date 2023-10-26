@@ -27,6 +27,10 @@
             android:exported="true"
             android:label="Novo Objeto">
         </activity>
+        <activity
+            android:name=".ui.tipos.CriaTipoActivity"
+            android:exported="true"
+            android:label="Novo Tipo">
+        </activity>
     </application>
-
 </manifest>

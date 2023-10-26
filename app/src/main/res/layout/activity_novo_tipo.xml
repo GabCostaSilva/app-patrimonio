@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -12,21 +13,21 @@
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="90dp">
 
-        <Spinner
-            android:id="@+id/tipoId"
-            android:layout_width="match_parent"
-            android:minHeight="48dp"
-            android:layout_height="wrap_content"
-            android:dropDownWidth="wrap_content"
-            android:hint="@string/tipo" />
-
         <EditText
-            android:id="@+id/nomeFuncionario"
+            android:id="@+id/tipoName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/nomeFuncionario"
-            android:inputType="textEmailAddress"
+            android:textSize="25sp"
+            android:hint="@string/tipoTipo" />
+
+        <EditText
+            android:id="@+id/descricaoTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/descricaoTipo"
+            android:inputType="text"
             android:textSize="25sp" />
 
         <LinearLayout

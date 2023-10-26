@@ -2,9 +2,14 @@ package br.ufms.gabriel.costa.silva.patrimonio.backend.entidades;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+import java.time.LocalDate;
+
+@Entity(foreignKeys = @ForeignKey(entity = Tipo.class,
+        parentColumns = "id", childColumns = "tipoId",
+        onDelete = ForeignKey.CASCADE))
 public class Objeto {
 
     @PrimaryKey(autoGenerate = true)
@@ -12,13 +17,13 @@ public class Objeto {
 
     private int tipoId;
 
-    @ColumnInfo(defaultValue = "CURRENT_TIMESTAMP")
     private String dataDeRegistro;
 
     private String nomeFuncionario;
 
-    public Objeto(int tipoId, String nomeFuncionario) {
+    public Objeto(String dataDeRegistro, int tipoId, String nomeFuncionario) {
         this.tipoId = tipoId;
+        this.dataDeRegistro = LocalDate.now().toString();
         this.nomeFuncionario = nomeFuncionario;
     }
 
@@ -58,8 +63,8 @@ public class Objeto {
     public String toString() {
         return
                 "Número de patrimônio " + numPatrimonio + "\n" +
-                "Tipo " + tipoId +"\n" +
-                "Data De Registro " + dataDeRegistro +"\n" +
-                "Nome do Funcionario " + nomeFuncionario;
+                        "Tipo " + tipoId + "\n" +
+                        "Data De Registro " + dataDeRegistro + "\n" +
+                        "Nome do Funcionario " + nomeFuncionario;
     }
 }

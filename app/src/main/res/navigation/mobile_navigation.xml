@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="br.ufms.gabriel.costa.silva.patrimonio.ui.notifications.NotificationsFragment"
+        android:name="br.ufms.gabriel.costa.silva.patrimonio.ui.tipos.TiposFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_tipos" />
 </navigation>

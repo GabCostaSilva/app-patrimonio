@@ -1,4 +1,4 @@
-package br.ufms.gabriel.costa.silva.patrimonio.ui.notifications;
+package br.ufms.gabriel.costa.silva.patrimonio.ui.tipos;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
