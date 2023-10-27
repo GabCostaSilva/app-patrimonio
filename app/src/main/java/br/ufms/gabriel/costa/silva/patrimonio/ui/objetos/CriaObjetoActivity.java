@@ -3,17 +3,14 @@ package br.ufms.gabriel.costa.silva.patrimonio.ui.objetos;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -53,7 +50,7 @@ public class CriaObjetoActivity extends AppCompatActivity implements ObjetosCont
 
         List<Tipo> tipos = tipoDao.getAll();
 
-        SpinnerAdapter adapter = new TipoSpinnerAdapter(this, android.R.layout.simple_spinner_item, tipos.toArray(new Tipo[0]));
+        SpinnerAdapter adapter = new TipoSpinnerAdapter(this, android.R.layout.simple_spinner_item, tipos);
         editTipo.setAdapter(adapter);
         editTipo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -89,7 +86,7 @@ public class CriaObjetoActivity extends AppCompatActivity implements ObjetosCont
             return;
         }
 
-        Objeto objetoParaCriacao = new Objeto(LocalDate.now().toString(), tipoSelecionado.getId(), funcionarioName);
+        Objeto objetoParaCriacao = new Objeto(tipoSelecionado.getId(), funcionarioName);
 
         if (Objects.nonNull(objeto)) {
             objetoParaCriacao.setNumPatrimonio(objeto.getNumPatrimonio());
@@ -117,7 +114,7 @@ public class CriaObjetoActivity extends AppCompatActivity implements ObjetosCont
 
     private void getObjeto() {
         objeto = objetoDao.getObjeto(numPatrimonio);
-        editTipo.setSelection(objeto.getTipoId());
+        editTipo.setSelection(objeto.getTipoId() - 1);
         editNomeFuncionario.setText(objeto.getNomeFuncionario());
     }
 }

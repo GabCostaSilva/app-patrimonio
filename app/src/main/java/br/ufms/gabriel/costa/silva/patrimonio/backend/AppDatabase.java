@@ -9,6 +9,7 @@ import androidx.room.RoomDatabase;
 import java.util.Objects;
 
 import br.ufms.gabriel.costa.silva.patrimonio.backend.dao.ObjetoDao;
+import br.ufms.gabriel.costa.silva.patrimonio.backend.dao.ObjetoTipoDao;
 import br.ufms.gabriel.costa.silva.patrimonio.backend.dao.TipoDao;
 import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.Objeto;
 import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.Tipo;
@@ -42,4 +43,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ObjetoDao objetoDao();
 
     public abstract TipoDao tipoDao();
+    public abstract ObjetoTipoDao objetoTipoDao();
 }

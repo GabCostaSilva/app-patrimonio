@@ -46,9 +46,7 @@ public class Tipo {
     @NonNull
     @Override
     public String toString() {
-        return new StringBuilder()
-                .append("Tipo ").append(tipo).append("\n")
-                .append("Descrição ").append(descricao)
-                .toString();
+        return "Tipo " + tipo + "\n" +
+                "Descrição " + descricao;
     }
 }

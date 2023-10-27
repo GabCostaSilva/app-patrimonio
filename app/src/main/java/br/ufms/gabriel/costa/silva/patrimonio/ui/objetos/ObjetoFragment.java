@@ -18,8 +18,8 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.List;
 
 import br.ufms.gabriel.costa.silva.patrimonio.backend.AppDatabase;
-import br.ufms.gabriel.costa.silva.patrimonio.backend.dao.ObjetoDao;
-import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.Objeto;
+import br.ufms.gabriel.costa.silva.patrimonio.backend.dao.ObjetoTipoDao;
+import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.ObjetoTipo;
 import br.ufms.gabriel.costa.silva.patrimonio.databinding.FragmentObjetoBinding;
 
 public class ObjetoFragment extends Fragment {
@@ -29,7 +29,7 @@ public class ObjetoFragment extends Fragment {
     private ListView listView;
 
     private Intent intent;
-    private ObjetoDao objetoDao;
+    private ObjetoTipoDao objetoTipoDao;
     private Context applicationContext;
 
     public ObjetoFragment() {
@@ -54,7 +54,7 @@ public class ObjetoFragment extends Fragment {
             Intent criaObjetoActivity = new Intent(applicationContext, CriaObjetoActivity.class);
             startActivity(criaObjetoActivity);
         });
-        this.objetoDao = db.objetoDao();
+        this.objetoTipoDao = db.objetoTipoDao();
         return root;
     }
 
@@ -66,13 +66,13 @@ public class ObjetoFragment extends Fragment {
     }
 
     private void preencheObjetos(Context context) {
-        List<Objeto> objetos = objetoDao.getAll();
-        ArrayAdapter<Objeto> adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, objetos);
+        List<ObjetoTipo> objetos = objetoTipoDao.getAllObjetoTipo();
+        ArrayAdapter<ObjetoTipo> adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, objetos);
 
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
-            Objeto objetoSelecionado = objetos.get(position);
+            ObjetoTipo objetoSelecionado = objetos.get(position);
             intent.putExtra("objeto_id", objetoSelecionado.getNumPatrimonio());
             startActivity(intent);
         });

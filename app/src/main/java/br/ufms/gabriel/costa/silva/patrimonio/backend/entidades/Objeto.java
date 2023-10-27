@@ -1,6 +1,5 @@
 package br.ufms.gabriel.costa.silva.patrimonio.backend.entidades;
 
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -21,7 +20,7 @@ public class Objeto {
 
     private String nomeFuncionario;
 
-    public Objeto(String dataDeRegistro, int tipoId, String nomeFuncionario) {
+    public Objeto(int tipoId, String nomeFuncionario) {
         this.tipoId = tipoId;
         this.dataDeRegistro = LocalDate.now().toString();
         this.nomeFuncionario = nomeFuncionario;

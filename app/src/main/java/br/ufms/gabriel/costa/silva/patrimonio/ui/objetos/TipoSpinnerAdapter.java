@@ -6,31 +6,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.util.List;
+
 import br.ufms.gabriel.costa.silva.patrimonio.backend.entidades.Tipo;
 
 public class TipoSpinnerAdapter extends ArrayAdapter<Tipo> {
 
-    private final Tipo[] values;
+    private final List<Tipo> tipos;
 
-    public TipoSpinnerAdapter(Context context, int textViewResourceId,
-                       Tipo[] values) {
-        super(context, textViewResourceId, values);
+    public TipoSpinnerAdapter(Context context, int textViewResourceId, List<Tipo> tipos) {
+        super(context, textViewResourceId, tipos);
         // Your sent context
-        this.values = values;
+        this.tipos = tipos;
     }
 
     @Override
-    public int getCount(){
-        return values.length;
+    public int getCount() {
+        return tipos.size();
     }
 
     @Override
-    public Tipo getItem(int position){
-        return values[position];
+    public Tipo getItem(int position) {
+        return tipos.get(position);
     }
 
     @Override
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return position;
     }
 
@@ -43,7 +45,8 @@ public class TipoSpinnerAdapter extends ArrayAdapter<Tipo> {
         label.setTextColor(Color.BLACK);
         // Then you can get the current item using the values array (Users array) and the current position
         // You can NOW reference each method you has created in your bean object (User class)
-        label.setText(values[position].getTipo());
+        Tipo tipo = tipos.get(position);
+        label.setText(tipo.getTipo());
 
         // And finally return your dynamic (or custom) view for each spinner item
         return label;
@@ -57,8 +60,8 @@ public class TipoSpinnerAdapter extends ArrayAdapter<Tipo> {
         TextView label = (TextView) super.getDropDownView(position, convertView, parent);
         label.setTextColor(Color.BLACK);
         label.setEms(35);
-        label.setText(values[position].getTipo());
-
+        Tipo tipo = tipos.get(position);
+        label.setText(tipo.getTipo());
         return label;
     }
 }
